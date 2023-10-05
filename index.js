@@ -3,16 +3,15 @@ const app = express();
 
 app.use(express.json());
 
-app.post("/login", (req, res) => {
-    const { email, password } = req.body;
-    if (!email || !password) return res.send(400);
-    console.log("email :", email, ", password :", password);
-    res.send(200);
-});
-app.get("/", (req, res) => {
-    res.send("hello express");
-});
+app.use(express.static("public"))
 
+app.get("/", (req, res) => {
+    const Array = [
+        { id: 1, name: "paing", email: "paing@email.com", password: "paing" },
+        { id: 1, name: "soe", email: "soe@email.com", password: "soe" }
+    ];
+    res.send(Array);
+});
 app.listen(5000, () => {
     console.log("server running port 5000");
 })
