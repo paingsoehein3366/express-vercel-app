@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 10px 0px;
+    border: 1px solid skyblue;
+}
+
+button {
+    width: 210px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: skyblue;
+    cursor: pointer;
+}
+
+button:active {
+    background: rgba(135, 207, 235, 0.716);
+}

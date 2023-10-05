@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Log in page</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <input class="email" type="email">
+            <input class="password" type="password">
+            <button>log in</button>
+        </div>
+        <script>
+            const EmailTag = document.querySelector(".email");
+            const PasswordTag = document.querySelector(".password");
+            const LoginTag = document.querySelector("button");
+            LoginTag.addEventListener("click", async () => {
+                const email = EmailTag.value;
+                const password = PasswordTag.value;
+                await fetch("http://localhost:5000/login", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({ email, password })
+                })
+            })
+        </script>
+    </body>
+
+</html>
